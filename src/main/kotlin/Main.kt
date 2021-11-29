@@ -1,30 +1,44 @@
+class Pila<T>() {
+    override fun toString(): String {
+        return list.toString()
+    }
 
-class Pila<T>()
-{
     var list = mutableListOf<T>()
 
     fun top(): T {
         return list.first()
     }
-    fun push(something:T){
-        list.add(0,something)
+
+    fun push(something: T) {
+        list.add(0, something)
     }
-    fun pop(){
-        list.removeAt(0)
+
+    fun pop() {
+        list.removeFirstOrNull()
     }
-    fun empty(): Boolean{
+
+    fun empty(): Boolean {
         return list.isEmpty()
     }
 
-    fun reverse(list: List<T>):List<T>{
-        val pila = Pila<T>()
-        val sequence1 = list<T> { list.iterator() }
-    }
+
+}
+
+fun <T> reverse(list: List<T>): List<T> {
+    val pila = Pila<T>()
+    val iterator = list.iterator()
+    val lista = mutableListOf<T>()
+    for(i in 0..list.size) {lista.add(pila.push(iterator.next()))}
+    //val lista =
+    return lista
 }
 
 
-
 fun main() {
+
+    var numbers = listOf("one", "two", "three", "four")
+    println(reverse(numbers))
+
     /*
     var numbers = listOf("one", "two", "three", "four")
     var numbersRev = reverse(numbers)
@@ -35,4 +49,5 @@ fun main() {
     println(numbersRev)
 
      */
+
 }
