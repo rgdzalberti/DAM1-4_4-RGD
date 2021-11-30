@@ -27,27 +27,23 @@ class Pila<T>() {
 fun <T> reverse(list: List<T>): List<T> {
     val pila = Pila<T>()
     val iterator = list.iterator()
-    val lista = mutableListOf<T>()
-    for(i in 0..list.size) {lista.add(pila.push(iterator.next()))}
-    //val lista =
-    return lista
+    while (iterator.hasNext()) pila.push(iterator.next())
+    return list
 }
 
 
 fun main() {
 
-    var numbers = listOf("one", "two", "three", "four")
-    println(reverse(numbers))
 
-    /*
     var numbers = listOf("one", "two", "three", "four")
     var numbersRev = reverse(numbers)
-    if (!listOf("four", "three", "two", "one").equals(numbersRev))
+    if (!listOf("four", "three", "two", "one").equals(numbersRev)) {
         println("Error")
-    else
+    }
+    else {
         println("Correcto")
-    println(numbersRev)
+        println(numbersRev)
+    }
 
-     */
 
 }
