@@ -28,7 +28,7 @@ fun <T> reverse(list: List<T>): List<T> {
     val pila = Pila<T>()
     val iterator = list.iterator()
     while (iterator.hasNext()) pila.push(iterator.next())
-    return list
+    return list.reversed()
 }
 
 
