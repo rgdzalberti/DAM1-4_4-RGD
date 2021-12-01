@@ -21,14 +21,23 @@ class Pila<T>() {
         return list.isEmpty()
     }
 
+    fun isNotEmpty(): Boolean{
+        return list.isNotEmpty()
+    }
+
 
 }
 
 fun <T> reverse(list: List<T>): List<T> {
     val pila = Pila<T>()
     val iterator = list.iterator()
+    val List2 = mutableListOf<T>()
     while (iterator.hasNext()) pila.push(iterator.next())
-    return list.reversed()
+    while(pila.isNotEmpty()){
+        pila.top()?.let {List2.add(it)}
+        pila.pop()
+    }
+    return List2
 }
 
 
